@@ -1,0 +1,1 @@
+curl --user user:pass 'http://<jenkins>/pluginManager/api/xml?depth=1&x‌​path=/*/*/shortName|‌​/*/*/version&wrapper‌​=plugins' | perl -pe 's/.*?<shortName>([\w-]+).*?<version>([^<]+)()(<\/\w+>)+/\1 \2\n/g'
