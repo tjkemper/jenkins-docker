@@ -31,6 +31,12 @@ RUN curl -sSL https://get.docker.com/ | sh && \
     apt-get purge -y docker-engine && \
     apt-get install docker-engine=${docker_version}-0~jessie
 
+
+# Install kubectl
+RUN curl -O https://storage.googleapis.com/bin.kuar.io/linux/kubectl \
+    && chmod +x kubectl \
+    && sudo cp kubectl /usr/local/bin/kubectl
+
 ### Give Java 8 GB memory
 # JAVA_OPTS -Xmx8192m
 
